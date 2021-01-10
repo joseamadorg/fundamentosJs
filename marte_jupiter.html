@@ -10,19 +10,32 @@
     <p>En la tierra pesas distinto que en otro planeta.</p>
     <script>
         var pesoUsuario = prompt("Cual es tu peso?");
+        var planetaUsuario = parseInt(prompt("Cual es tu planeta? Marte: 1 - Jupiter: 2"))
         var peso = parseInt(pesoUsuario);
         var gravedadTierra = 9.8;
         var gravedadMarte = 3.7; 
         var gravedadJupiter = 24.8; 
         var pesoFinal; //Iniciada sin valor 
+        var nombre;
+        if (planetaUsuario == 1) {
+            pesoFinal = peso * gravedadMarte / gravedadTierra; 
+            nombre = "Marte";
 
-        pesoFinal = peso * gravedadMarte / gravedadTierra; 
+        }else if(planetaUsuario == 2){
+            pesoFinal = peso * gravedadJupiter / gravedadTierra; 
+            nombre ="Jupiter";
+
+        } else{
+            pesoFinal = 0;
+            nombre ="Planeta Desconocido";
+        }
+
+        document.write("Tu peso en " + nombre + " es " + parseInt(pesoFinal) + " en kilos")
+        
 
         //pesoFinal = parseInt(pesoFinal); //29 -te saca el decimal-
 
-        pesoFinal = pesoFinal.toFixed(2); //29.07 -te reduce los decimales al numero que le pasas por parametro
-
-        document.write("Tu peso en Marte es " +pesoFinal + " kilos"); 
+        //pesoFinal = pesoFinal.toFixed(2); //29.07 -te reduce los decimales al numero que le pasas por parametro. Cuando usé este método no pintaba en pantalla el NaN como sí lo hizo con parseInt. Me daba "undefined"
 
 
     </script>
