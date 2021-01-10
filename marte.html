@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peso en Marte</title>
+</head>
+<body>
+    <h1>TU PESO EN OTRO PLANETA</h1>
+    <p>En la tierra pesas distinto que en otro planeta.</p>
+    <script>
+        var pesoUsuario = prompt("Cual es tu peso?");
+        var peso = parseInt(pesoUsuario);
+        var gravedadTierra = 9.8;
+        var gravedadMarte = 3.7; 
+        var gravedadJupiter = 24.8; 
+        var pesoFinal; //Iniciada sin valor 
+
+        pesoFinal = peso * gravedadMarte / gravedadTierra; 
+
+        //pesoFinal = parseInt(pesoFinal); //29 -te saca el decimal-
+
+        pesoFinal = pesoFinal.toFixed(2); //29.07 -te reduce los decimales al numero que le pasas por parametro
+
+        document.write("Tu peso en Marte es " +pesoFinal + " kilos"); 
+
+
+    </script>
+</body>
+</html>
